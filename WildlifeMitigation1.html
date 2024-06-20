@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Wildfire Mitigation</title>
+
+<script>
+  function showHideTextBox(selectID, inputID) {
+
+    var ddl = document.getElementById(selectID);
+    var selectedValue = ddl.options[ddl.selectedIndex].value;
+    var newTypeTextbox = document.getElementById(inputID);
+  
+    if (selectedValue === "other") {
+        newTypeTextbox.style.display = "block"; // Show the text box
+    } else {
+      newTypeTextbox.style.display = "none"; // Hide the text box
+    }
+  }
+  </script>
+
+</head>
+
+<body>
+  <h2>Main Structure</h2>
+    <table border="1">
+        <tr><td><label for="address">Address marking present:</label>
+          <select name="address" id="address">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </td></tr>>
+
+        <tr><td><form action="">
+            <label><input type="file" id="AddressPhotos" name="filename"><span>Upload Photos</span></label>
+            <input type="submit"></form>
+        </td></tr>
+        
+        <tr><td><label for="FDturnaround">Fire Department turnaround:</label>
+            <select name="FDturnaround" id="FDturnaround">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+        </td></tr>>
+
+        <tr><td><label for="composition">Composition:</label>
+          <select id="composition" onchange="showHideTextBox('composition', 'CompositionTextBox')" multiple>
+              <option value="ArchitecturalShingle">Architectural Shingle</option>
+              <option value="AsphaltShingle">Asphalt Shingle</option>
+              <option value="CementTile">Cement Tile</option>
+              <option value="ClayBarrel">Clay Barrel</option>
+              <option value="EarthGreen">Earth/green</option>
+              <option value="MetalCorrugated">Metal - Corrugated</option>
+              <option value="MetalStandingSeam">Metal - Standing Seam</option>
+              <option value="RubberMembrane">Rubber Membrane</option>
+              <option value="Slate">Slate</option>
+              <option value="WoodShake">Wood Shake</option>
+              <option value="other">Other</option>
+          </select>
+
+          <input type="text" id="CompositionTextBox" style="display: none;"> <!-- Initially hidden -->
+
+        </td></tr>
+
+        <tr><td>
+            <label for="soffit">Soffit:</label>
+            <select name="soffit" id="soffit">
+              <option value="ExposedBeams">Exposed Beams</option>
+              <option value="EnclosedBeams">Enclosed Beams</option>
+              <option value="vents">Vents</option>
+            </select>
+        </td></tr>
+
+        <tr><td>
+          <label for="BirdStops">Bird Stops - Clay Barrel:</label>
+          <select name="BirdStops" id="BirdStops">
+            <option value="open">Open</option>
+            <option value="closed">Closed</option>
+          </select>
+        </td></tr>
+  
+        <tr><td><label for="vents">Vents:</label>
+          <select id="vents" onchange="showHideTextBox('vents', 'VentsTextBox')" multiple>
+              <option value="dormer">Dormer</option>
+              <option value="ridge">Ridge</option>
+              <option value="Whirlybird">Whirlybird</option>
+              <option value="BoxTurtle">Box/Turtle</option>
+              <option value="other">Other</option>
+          </select>
+
+          <input type="text" id="VentsTextBox" style="display: none;"> <!-- Initially hidden -->
+
+        </td></tr>
+        <tr><td>
+          <div id="GuttersCombustible">
+            <label for="GuttersCombustible">Gutters combustible?</label>
+            <input type="radio" name="GuttersCombustible" checked>Yes</input>
+            <input type="radio" name="GuttersCombustible">No</input>
+          </div>
+        </td></tr>
+
+        <tr><td>
+          <div id="GuttersDebris">
+            <label for="GuttersDebris">Gutters debris?</label>
+            <input type="radio" name="GuttersDebris" checked>Yes</input>
+            <input type="radio" name="GuttersDebris">No</input>
+          </div>
+        </td></tr>
+
+        <tr><td>
+          <div id="GutterGaurds">
+            <label for="GutterGaurds">Gutter gaurds?</label>
+            <input type="radio" name="GutterGaurds" checked>Yes</input>
+            <input type="radio" name="GutterGaurds">No</input>
+          </div>
+        </td></tr>
+
+        <tr><td>
+          <div id="RoofDebris">
+            <label for="RoofDebris">Debris or Litter buildup on Roof?</label>
+            <input type="radio" name="RoofDebris" checked>Yes</input>
+            <input type="radio" name="RoofDebris">No</input>
+          </div>
+        </td></tr>
+
+        <tr><td><label for="SKylightComposition">SkyLight Composition:</label>
+          <select name="SKylightComposition" id="SKylightComposition" multiple>
+            <option value="plastic">Plastic</option>
+            <option value="glass">Glass</option>
+            <option value="singlepane">Single pane</option>
+            <option value="doublepane">Double pane</option>
+          </select>
+          <p>
+            Number of Skylights:<input type="number" name="NumSkylights" />
+          </p>
+        </td></tr>
+
+        <tr><td><label for="SidingComposition">Siding Composition:</label>
+          <select id="SidingComposition" onchange="showHideTextBox('SidingComposition', 'SCTextBox')" multiple>
+              <option value="brick">Brick</option>
+              <option value="CementHardieBoard">Cement/Hardie-Board</option>
+              <option value="Log">Log</option>
+              <option value="LogVeneer">Log veneer</option>
+              <option value="metal">Metal</option>
+              <option value="stone">Stone</option>
+              <option value="StoneVeneer">Stone veneer</option>
+              <option value="stucco">Stucco</option>
+              <option value="stone">Stone</option>
+              <option value="vinyl">Vinyl</option>
+              <option value="WoodPlank">Wood Plank</option>
+              <option value="WoodShingle">Wood Shingle</option>
+              <option value="other">Other</option>
+          </select>
+          <p>
+          <input type="text" id="SCTextBox" style="display: none;"> <!-- Initially hidden -->
+          </p>
+          <p>
+          <label><input type="file" id="SCPhotos" name="filename"><span>Upload Photos</span></label>
+          <input type="submit"></form>
+          </p>
+
+        </td></tr>
+
+        <tr><td><label for="w3review">Review of W3Schools:</label>
+            <textarea id="w3review" name="w3review" rows="4" cols="50">
+            At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+            </textarea>
+        </td></tr>
+
+
+          </table>
+
+
+    <div class="form_links">
+      <a class="form_link" href="{{url_for('logout') }}">Logout</a>
+  </div>
+</body>
+
+</html>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 
+    <title>Register</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}""
+  </head>
+
+  <form class="form" action="" method="POST">
+    <input class="form_input" type="email" name="email" placeholder="Email" />
+    <input
+      class="form_input"
+      type="password"
+      name="password"
+      placeholder="Password"
+    />
+    <button class="form_button" type="submit">Register</button>
+  </form>
+  <div class="form_links">
+    <a class="form_link" href="{{url_for('login')}}">Login</a>
+  </div>
+</html>
+{#url_for automatically generates url references to views within the app#}
